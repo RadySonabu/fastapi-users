@@ -14,6 +14,7 @@ Base: DeclarativeMeta = declarative_base()
 class User(SQLAlchemyBaseUserTableUUID, Base):
     tenant: str = Column(String, nullable=False)
 
+
 engine = create_async_engine(DATABASE_URL)
 async_session_maker = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 

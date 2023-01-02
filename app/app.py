@@ -35,10 +35,6 @@ app.include_router(
 async def authenticated_route(user: User = Depends(current_active_user)):
     return {"message": f"Hello {user.email}!"}
 
-# @app.post("/api")
-# async def authenticated_api_route(request_route: RequestRoute):
-    
-#     return {"message": f"Hello {request_route.token}!"}
 
 @app.on_event("startup")
 async def on_startup():
