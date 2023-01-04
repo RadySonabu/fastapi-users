@@ -12,7 +12,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: ['3.10']
+        python-version: ['3.9']
 
     steps:
     - uses: actions/checkout@v3
@@ -52,7 +52,7 @@ jobs:
       run: . venv/bin/activate
     - name: Create archive of dependencies
       run: |
-        cd ./venv/lib/python3.10/site-packages
+        cd ./venv/lib/python3.9/site-packages
         zip -r9 ../../../../api.zip .
 
     - name: Add API files to Zip file
@@ -87,7 +87,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy new Lambda
-        run: aws lambda update-function-code --function-name fastapi --s3-bucket lambda-ardy --s3-key api.zip
+        run: aws lambda update-function-code --function-name fastapi-user-2023 --s3-bucket lambda-ardy --s3-key api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
