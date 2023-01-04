@@ -7,7 +7,8 @@ from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, String
 
-DATABASE_URL = "sqlite+aiosqlite:///./test.db"
+# DATABASE_URL = "sqlite+aiosqlite:///./test.db"
+DATABASE_URL = "postgresql+asyncpg://vzijcxwv:cpoctX16shRe_c6U6L56W8OS-SlxXzPU@satao.db.elephantsql.com/vzijcxwv"
 Base: DeclarativeMeta = declarative_base()
 
 
