@@ -5,7 +5,7 @@ from .schemas import UserCreate, UserRead, UserUpdate
 from .users import auth_backend, current_active_user, fastapi_users
 from mangum import Mangum
 
-app = FastAPI()
+app = FastAPI(openapi_prefix="/prod")
 
 app.include_router(
     fastapi_users.get_auth_router(auth_backend), prefix="/auth/jwt", tags=["auth"]
