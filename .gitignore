@@ -261,3 +261,4 @@ env/*
 env/
 env
 test.db
+local.settings.json
