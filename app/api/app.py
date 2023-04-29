@@ -4,7 +4,7 @@ from .db import User, create_db_and_tables
 from .schemas import UserCreate, UserRead, UserUpdate
 from .users import auth_backend, current_active_user, fastapi_users
 
-api = FastAPI(openapi_url="/api")
+api = FastAPI()
 
 api.include_router(
     fastapi_users.get_auth_router(auth_backend), prefix="/auth/jwt", tags=["auth"]
