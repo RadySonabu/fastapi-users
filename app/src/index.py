@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from mangum import Mangum
-from app.api.app import api
-from app.app.app import route
+from .api.app import api
+from .app.app import route
 
 app = FastAPI()
 
