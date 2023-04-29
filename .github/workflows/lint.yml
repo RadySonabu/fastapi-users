@@ -57,15 +57,15 @@ jobs:
     - name: Create archive of dependencies
       run: |
         cd ./venv/lib/python3.9/site-packages
-        zip -r9 ../../../../api.zip .
+        zip -r9 ../../../../app.zip .
 
     - name: Add API files to Zip file
-      run: cd ./api && zip -g ../api.zip -r .
+      run: cd ./app && zip -g ../app.zip -r .
     - name: Upload zip file artifact
       uses: actions/upload-artifact@v2
       with:
-        name: api
-        path: api.zip
+        name: app
+        path: app.zip
   
   cd:
     runs-on: ubuntu-latest
