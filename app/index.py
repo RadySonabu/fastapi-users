@@ -5,14 +5,14 @@ from .app.app import route
 
 app = FastAPI()
 
-app.mount("/api", api)
-app.mount("", route)
 
-
-@app.get("")
-async def authenticated_route():
+@app.get("/")
+async def index():
     return {"message": "Hello World!"}
 
+
+app.mount("/api", api)
+app.mount("/", route)
 
 # For AWS deployment
 handler = Mangum(app=app)
