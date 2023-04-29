@@ -83,7 +83,7 @@ jobs:
       - name: Download Lambda app.zip
         uses: actions/download-artifact@v2
         with:
-          name: app
+          name: app 
       - name: Upload to S3
         run: aws s3 cp app.zip s3://fastapi-aws-lambda/app.zip
         env:
