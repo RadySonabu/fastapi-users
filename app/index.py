@@ -10,4 +10,3 @@ app.mount("", route)
 
 # For AWS deployment
 handler = Mangum(app=app)
-
