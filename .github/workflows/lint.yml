@@ -44,10 +44,10 @@ jobs:
 
     - name: Install cryptography
       run : pip install \
-            --platform manylinux2014_x86_64 \
-            --implementation cp \
-            --python 3.9 \
-            --target=build/package \
+            platform manylinux2014_x86_64 \
+            implementation cp \
+            python 3.9 \
+            target=build/package \
             cryptography==38.0.3
       
     - name: Lint with flake8
