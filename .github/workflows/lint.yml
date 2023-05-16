@@ -43,7 +43,13 @@ jobs:
       # if: steps.cache-venv.outputs.cache-hit != 'true'
 
     - name: Install cryptography
-      run : pip install cryptography --no-binary cryptography
+      run : pip install \
+            --platform manylinux2014_x86_64 \
+            --implementation cp \
+            --python 3.9 \
+            --only-binary=:all: --upgrade \
+            --target=build/package \
+            cryptography==38.0.3
       
     - name: Lint with flake8
       run: |
