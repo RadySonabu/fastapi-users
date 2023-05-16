@@ -42,8 +42,8 @@ jobs:
       run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
       # if: steps.cache-venv.outputs.cache-hit != 'true'
 
-    # - name: Install cryptography
-    #   run : pip install cryptography --no-binary cryptography
+    - name: Install cryptography
+      run : pip install cryptography  target x86_64-unknown-linux-gnu
       
     - name: Lint with flake8
       run: |
