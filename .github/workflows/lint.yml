@@ -43,7 +43,7 @@ jobs:
       # if: steps.cache-venv.outputs.cache-hit != 'true'
 
     - name: Install cryptography
-      run : pip install cryptography  target x86_64-unknown-linux-gnu
+      run : pip install cryptography --prefer-binary --no-binary :all
       
     - name: Lint with flake8
       run: |
