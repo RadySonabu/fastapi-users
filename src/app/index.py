@@ -13,7 +13,7 @@ async def index():
     return {"message": "Hello World!"}
 
 
-@app.get("sample/items/{id}", response_class=HTMLResponse)
+@app.get("/sample/items/{id}", response_class=HTMLResponse)
 async def read_item(request: Request, id: str):
     return templates.TemplateResponse("item.html", {"request": request, "id": id})
 
